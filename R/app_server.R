@@ -17,5 +17,5 @@ app_server <- function(input, output, session) {
 
     # load module
 
-    mod_crosstabs_server("crosstabs_1")
+    mod_crosstabs_server("crosstabs_1", send_data = df)
 }

@@ -8,16 +8,11 @@
 #'
 #' @return dataframe
 
-cross_tabulate <- function(data, rows, columns){
+cross_tabulate <- function(data, rows, columns, by_row = TRUE){
 
-    df |>
-        dplyr::group_by(.data[[rows]], .data[[columns]])
-
+    data |>
+        dplyr::count(.data[[rows]], .data[[columns]]) |>
+        tidyr::pivot_wider(names_from = ifelse(by_row, rows, columns),
+                           values_from = n)
 
 }
-
-df |>
-    dplyr::count(category, sentiment) |>
-    tidyr::pivot_wider(id_cols = c(category, sentiment))
-
-cross_tabulate(df, "category", "sentiment")
