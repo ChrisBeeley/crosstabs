@@ -19,13 +19,15 @@ mod_crosstabs_ui <- function(id){
 #' crosstabs Server Functions
 #'
 #' @noRd
-mod_crosstabs_server <- function(id, send_data){
+mod_crosstabs_server <- function(id, send_data, rows, columns, inputs){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
 
     output$crosstabs <- DT::renderDT({
 
-      cross_tabulate(send_data, "category", "fft", by_row = FALSE)
+      cross_tabulate(send_data,
+                     inputs()[["rows"]],
+                     inputs()[["columns"]], by_row = FALSE)
 
     })
 

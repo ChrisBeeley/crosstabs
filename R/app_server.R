@@ -27,7 +27,16 @@ app_server <- function(input, output, session) {
       )
     })
 
+    input_list <- reactive(
+
+      list(
+        "rows" = input$rows,
+        "columns" = input$columns
+      )
+    )
+
     # load module
 
-    mod_crosstabs_server("crosstabs_1", send_data = df)
+    mod_crosstabs_server("crosstabs_1", send_data = df,
+                         inputs = input_list)
 }
