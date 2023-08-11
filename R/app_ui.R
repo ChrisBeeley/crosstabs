@@ -11,7 +11,12 @@ app_ui <- function(request) {
     # Your application UI logic
     fluidPage(
       h1("crosstabs"),
-      mod_crosstabs_ui("crosstabs_1")
+      fluidRow(
+        column(3,
+               uiOutput("sidebar_inputs")),
+        column(9, mod_crosstabs_ui("crosstabs_1"))
+      )
+
     )
   )
 }
