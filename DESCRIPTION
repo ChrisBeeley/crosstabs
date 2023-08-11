@@ -10,6 +10,7 @@ Imports:
     dplyr,
     DT,
     golem (>= 0.4.1),
+    pkgload,
     shiny (>= 1.7.4.1),
     tidyr
 Suggests: 

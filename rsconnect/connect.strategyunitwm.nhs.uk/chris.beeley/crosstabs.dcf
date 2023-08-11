@@ -1,0 +1,13 @@
+name: crosstabs
+title: crosstabs
+username: chris.beeley
+account: chris.beeley
+server: connect.strategyunitwm.nhs.uk
+hostUrl: https://connect.strategyunitwm.nhs.uk/__api__
+appId: 132
+bundleId: 643
+url: https://connect.strategyunitwm.nhs.uk/content/062d231e-21a4-43fc-8c96-b84aa401e553/
+when: 1691769846.56471
+lastSyncTime: 1691769846.56473
+asMultiple: FALSE
+asStatic: FALSE
